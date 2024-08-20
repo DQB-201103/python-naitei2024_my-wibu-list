@@ -34,6 +34,18 @@ def homepage(request):
         'top_ranked_content': top_ranked_content,
     })
 
+def user(request):
+    top_watching_content = Content.objects.order_by('-watching')[:TOP_WATCHING_LIMIT]
+
+    latest_content = Content.objects.order_by('-lastUpdate')[:LATEST_CONTENT_LIMIT]
+
+    top_ranked_content = Content.objects.order_by('ranked')[:TOP_RANKED_LIMIT]
+
+    return render(request, 'html/homepage_user.html', {
+        'top_watching_content': top_watching_content,
+        'latest_content': latest_content,
+        'top_ranked_content': top_ranked_content,
+    })
 
 def register(request):
     if request.method == 'POST':
@@ -134,3 +146,8 @@ def filter_by_genre(request, genre):
     }
     return render(request, 'html/filtered_content.html', context)
 
+def order_history(request):
+    uid = 11  
+
+    orders = Order.objects.filter(uid_id=uid)
+    return render(request, 'html/order_history.html', {'orders': orders})

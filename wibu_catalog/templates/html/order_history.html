@@ -1,0 +1,45 @@
+{% extends 'html/homepage.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/order_history.css' %}"> 
+{% load static i18n %}
+
+{% block notification %}
+{% endblock notification %} 
+
+{% block top_carousel %}
+{% endblock top_carousel %}
+
+{% block anime_carousel %}
+{% endblock anime_carousel %}
+
+{% block latest_updates %}
+<h2>Lịch sử mua hàng</h2>
+
+<div class="order-history-container"> 
+    <ul class="order-list">
+        {% for order in orders %}
+        <li class="order-item">
+            <h3>Đơn hàng #{{ order.id }}</h3>
+            <p>Ngày đặt hàng: {{ order.created_at }}</p>
+            <ul class="order-details">
+                {% for item in order.order_items.all %} 
+                <li>
+                    <img src="{{ item.product.picture.url }}" alt="{{ item.product.name }}"> 
+                    <h4>{{ item.product.name }}</h4>
+                    <p>Số lượng: {{ item.quantity }}</p>
+                    <p>Giá: {{ item.buyPrice }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% empty %}
+        <li class="no-orders-message">Bạn chưa có đơn hàng nào.</li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+{% endblock latest_updates %}
+
+{% block sidebar %}
+{% endblock sidebar %}

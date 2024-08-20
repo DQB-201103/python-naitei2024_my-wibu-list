@@ -1,0 +1,92 @@
+/* order_history.css */
+
+/* Kiểu dáng chung cho trang */
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Container chính cho lịch sử mua hàng và đề xuất */
+.order-history-container, .recommendations-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Danh sách đơn hàng */
+.order-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Mỗi mục đơn hàng */
+.order-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+/* Chi tiết đơn hàng (danh sách sản phẩm) */
+.order-details {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.order-details li {
+    width: calc(33% - 20px);
+    margin: 10px;
+    text-align: center;
+}
+
+.order-details li img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Thông báo khi không có đơn hàng */
+.no-orders-message {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+}
+
+/* Container cho phần đề xuất */
+.recommendations-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Nút đề xuất */
+.recommendation-button {
+    background-color: #eee;
+    color: #333;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.recommendation-button.active {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+/* Liên kết "See More" */
+.see-more-link {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+}

@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.homepage, name='homepage'),
+    path('user/', views.user, name='user'),
     path('register/', views.register, name='register'),
     # url mapping for list views
     path('anime/', views.AnimeListView.as_view(), name='anime'),
@@ -17,4 +18,5 @@ urlpatterns = [
     path('product/',views.list_product,name='product'),
     path('search_content/', views.search_content, name='search_content'),
     path('filter_by_genre/<str:genre>/', views.filter_by_genre, name='filter_by_genre'),
+    path('order-history/', views.order_history, name='order_history'),
 ]

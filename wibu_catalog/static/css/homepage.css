@@ -32,6 +32,73 @@ header h1 {
     font-size: 20px;
 }
 
+
+/* Login và user */
+/* CSS cơ bản cho thông báo và user */
+/* CSS cơ bản cho thông báo và user */
+.notification-icon, .user-dropdown {
+    position: relative; 
+    cursor: pointer; 
+    margin: 7px;
+}
+
+.notification-content, .user-menu {
+    display: none;  /* Ẩn menu con ban đầu */
+    position: absolute;
+    top: 100%; 
+    right: 5px;
+    background-color: #fff; 
+    border: 1px solid #ccc; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    z-index: 10; 
+    max-width: 250px; 
+    opacity: 0; /* Ẩn menu con bằng opacity ban đầu */
+    transition: opacity 0.3s ease; /* Thêm transition cho opacity */
+}
+
+/* Hiển thị menu con khi di chuột qua */
+.notification-icon:hover .notification-content,
+.user-dropdown:hover .user-menu {
+    display: block;
+    opacity: 1; /* Hiển thị menu con bằng opacity */
+}
+
+.notification-content ul, .user-menu ul {
+    list-style: none;
+    padding: 0;
+    width: 150px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.notification-content li a, .user-menu li a {
+    display: block;
+    padding: 10px;
+    color: #333; 
+    text-decoration: none;
+}
+
+.notification-content li a:hover, .user-menu li a:hover {
+    background-color: #f5f5f5; 
+}
+
+.notification-content, .user-menu {
+    column-count: 1; 
+}
+
+.notification-icon .notification-icon {
+    background-color: #e74c3c; 
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.user-dropdown .user-icon {
+    background-color: #2ecc71;
+    padding: 5px;
+    border-radius: 50%;
+}
+/*---------------------------*/
 nav {
     display: flex;
 }
